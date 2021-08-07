@@ -3,6 +3,7 @@ package com.group.mycompany.quicksort;
 import java.util.Random;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.IntStream;
 
 public class PruebaTiempo {
 
@@ -61,8 +62,8 @@ public class PruebaTiempo {
         long t1, t2;
         double fn, fnl, fn2;
         for (int k = 50000; k <= 1000000; k += 50000) {
-            int arr[] = rd.ints(k, 10000, 1000001).toArray();
-            Integer array[] = Arrays.stream(arr).boxed().toArray(Integer[]::new);
+            IntStream arr = rd.ints(k, 10000, 1000001);
+            Integer array[] = arr.boxed().toArray(Integer[]::new);
             Util.quicksort(array);
             t1 = System.nanoTime();
             for (int i = 0; i < k; i++) {
