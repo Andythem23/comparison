@@ -46,7 +46,7 @@ public class Util {
     }
 
     private static <T extends Comparable<? super T>> void insertionSort(T a[], int low, int high) {
-        for (int p = low+1; p <= high; p++) {
+        for (int p = low + 1; p <= high; p++) {
             T tmp = a[p];
             int j = p;
             for (; j > 0 && tmp.compareTo(a[j - 1]) < 0; j--) {
